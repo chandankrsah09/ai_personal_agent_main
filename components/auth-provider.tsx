@@ -53,7 +53,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
               email: currentUser.email || null,
               name: displayName,
               avatar_url: avatarUrl,
-              auth_provider: "google",
+              auth_provider: currentUser.app_metadata?.provider || "email",
               last_login_at: now,
             },
           ]);
